@@ -1,0 +1,1101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hozayfa Mustafa - Full Stack Software Engineer Portfolio">
+    <title>Hozayfa Mustafa | Full Stack Developer</title>
+    <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+:root {
+    --bg: #090b10;
+    --bg-secondary: #10131b;
+    --card: #141823;
+    --border: #242936;
+    --text: #f1f3f9;
+    --muted: #9299a9;
+    --primary: #a78bfa;
+    --primary-dark: #8063dc;
+    --green: #80e6b0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+.section {
+    padding: 110px 0;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(9, 11, 16, 0.88);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.nav-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 690px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 70px;
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
+.availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 7px 13px;
+    background: rgba(128, 230, 176, .07);
+    border: 1px solid rgba(128, 230, 176, .18);
+    border-radius: 30px;
+    font-size: 11px;
+    color: var(--green);
+    margin-bottom: 30px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 10px var(--green);
+}
+
+.eyebrow,
+.section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.hero h1 {
+    font-size: clamp(55px, 7vw, 88px);
+    line-height: 1.05;
+    letter-spacing: -5px;
+    margin: 15px 0;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.contact-box h2 span {
+    color: var(--primary);
+}
+
+.hero h2 {
+    font-size: 19px;
+    font-weight: 500;
+    color: #c5c8d3;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 490px;
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 32px;
+}
+
+.btn {
+    padding: 13px 23px;
+    display: inline-block;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #101018;
+}
+
+.btn-primary:hover {
+    background: #b9a4ff;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.social-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.social-links a {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.social-links a:hover {
+    color: var(--primary);
+}
+
+/* =========================
+   HERO CODE CARD
+========================= */
+
+.hero-visual {
+    position: relative;
+}
+
+.visual-card {
+    background: linear-gradient(145deg, #171c29, #10131b);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 30px 90px rgba(0,0,0,.3);
+    transform: rotate(2deg);
+}
+
+.card-header {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background: #1a1f2d;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.window-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #f17878;
+}
+
+.window-dots span:nth-child(2) {
+    background: #e8c56e;
+}
+
+.window-dots span:nth-child(3) {
+    background: #80e6b0;
+}
+
+.code-content {
+    padding: 30px;
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 2.6;
+    color: #d1d5e0;
+    overflow-x: auto;
+}
+
+.indent {
+    padding-left: 25px;
+}
+
+.purple {
+    color: #c49cff;
+}
+
+.green {
+    color: #80e6b0;
+}
+
+.floating-tag {
+    position: absolute;
+    padding: 12px 17px;
+    border: 1px solid var(--border);
+    background: #191e2a;
+    border-radius: 8px;
+    font-size: 11px;
+    box-shadow: 0 10px 30px #0005;
+}
+
+.tag-one {
+    top: 15%;
+    right: -30px;
+}
+
+.tag-two {
+    bottom: 5%;
+    left: -35px;
+    color: var(--primary);
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.section-heading {
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: clamp(30px, 4vw, 43px);
+    letter-spacing: -1.5px;
+    margin-top: 15px;
+}
+
+.section-heading > p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.about-text h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 17px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.stat-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    color: var(--primary);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--card);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.skill-icon {
+    font-size: 27px;
+    color: var(--primary);
+}
+
+.skill-card h3 {
+    margin: 15px 0 20px;
+    font-size: 18px;
+}
+
+.skill-tags,
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.skill-tags span,
+.project-tech span {
+    background: #222838;
+    border: 1px solid var(--border);
+    color: #c1c5d1;
+    padding: 6px 11px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--primary);
+}
+
+.project-image {
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image span {
+    position: absolute;
+    top: 15px;
+    left: 17px;
+    font-size: 11px;
+    color: #ffffff80;
+}
+
+.project-one {
+    background: linear-gradient(135deg, #26314a, #6250a1);
+}
+
+.project-two {
+    background: linear-gradient(135deg, #193d40, #317c81);
+}
+
+.project-three {
+    background: linear-gradient(135deg, #402d49, #a05a8e);
+}
+
+.project-preview {
+    font-size: 21px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-category {
+    color: var(--primary);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.project-info h3 {
+    font-size: 19px;
+    margin: 12px 0;
+}
+
+.project-info p {
+    font-size: 12px;
+    color: var(--muted);
+    min-height: 75px;
+}
+
+.project-tech {
+    margin: 20px 0;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience-section {
+    background: var(--bg-secondary);
+}
+
+.timeline {
+    border-left: 1px solid var(--border);
+    margin-left: 8px;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    max-width: 650px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -36px;
+    top: 7px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 15px var(--primary);
+}
+
+.timeline-date {
+    font-size: 11px;
+    color: var(--primary);
+}
+
+.timeline-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.timeline-company {
+    color: #c4c7d1 !important;
+}
+
+.timeline-item p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box {
+    text-align: center;
+    background: linear-gradient(145deg, #191c2a, #11131c);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 80px 25px;
+}
+
+.contact-box h2 {
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.3;
+    margin: 25px 0;
+    letter-spacing: -2px;
+}
+
+.contact-box > p {
+    max-width: 500px;
+    margin: 0 auto 30px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.contact-socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.contact-socials a {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.contact-socials a:hover {
+    color: var(--primary);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 25px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p,
+.footer-content > a:last-child {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 65px;
+        padding-top: 80px;
+    }
+
+    .hero-visual {
+        max-width: 600px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .navbar {
+        height: 70px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding-top: 75px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+        letter-spacing: -3px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .code-content {
+        font-size: 10px;
+        padding: 20px;
+    }
+
+    .tag-one {
+        right: -10px;
+    }
+
+    .tag-two {
+        left: -10px;
+    }
+
+    .about-grid,
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-stats {
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 18px;
+    }
+
+    .contact-box {
+        padding: 55px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+</style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">HM<span>.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="nav-btn">Let's Talk ↗</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero container" id="home">
+
+        <div class="hero-content">
+            <div class="availability">
+                <span class="status-dot"></span>
+                Available for opportunities
+            </div>
+
+            <p class="eyebrow">HELLO, I'M</p>
+
+            <h1>
+                Hozayfa<br>
+                <span>Mustafa.</span>
+            </h1>
+
+            <h2>Full Stack Software Engineer</h2>
+
+            <p class="hero-description">
+                I build modern, scalable, and user-focused web applications.
+                Passionate about turning complex problems into simple,
+                efficient digital solutions.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Work ↗
+                </a>
+
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/" target="_blank">GitHub ↗</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn ↗</a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="visual-card">
+                <div class="card-header">
+                    <div class="window-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span>developer.js</span>
+                </div>
+
+                <div class="code-content">
+                    <p><span class="purple">const</span> developer = {</p>
+                    <p class="indent">name: <span class="green">'Hozayfa Mustafa'</span>,</p>
+                    <p class="indent">role: <span class="green">'Full Stack Developer'</span>,</p>
+                    <p class="indent">frontend: [<span class="green">'React'</span>, <span class="green">'Next.js'</span>],</p>
+                    <p class="indent">backend: [<span class="green">'Laravel'</span>, <span class="green">'Node.js'</span>],</p>
+                    <p class="indent">database: <span class="green">'MySQL'</span>,</p>
+                    <p class="indent">passion: <span class="green">'Building things'</span></p>
+                    <p>};</p>
+                    <br>
+                    <p><span class="purple">console</span>.log(developer);</p>
+                </div>
+            </div>
+
+            <div class="floating-tag tag-one">⚡ Clean Code</div>
+            <div class="floating-tag tag-two">{"<"} Developer /{">"}</div>
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section class="section container" id="about">
+        <div class="section-heading">
+            <span class="section-label">01 / ABOUT ME</span>
+            <h2>More than just <span>writing code.</span></h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Building digital experiences with purpose.</h3>
+
+                <p>
+                    I'm Hozayfa Mustafa, a Full Stack Software Engineer
+                    interested in developing modern web applications
+                    and solving real-world problems through technology.
+                </p>
+
+                <p>
+                    I work with both frontend and backend technologies,
+                    building responsive user interfaces, developing
+                    server-side applications, and designing database
+                    structures.
+                </p>
+
+                <p>
+                    I believe in continuous learning, writing maintainable
+                    code, and improving my skills through practical projects.
+                </p>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat-card">
+                    <h3>01</h3>
+                    <p>Full Stack Development</p>
+                </div>
+                <div class="stat-card">
+                    <h3>02</h3>
+                    <p>Problem Solving</p>
+                </div>
+                <div class="stat-card">
+                    <h3>03</h3>
+                    <p>Continuous Learning</p>
+                </div>
+                <div class="stat-card">
+                    <h3>04</h3>
+                    <p>Clean Architecture</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">02 / TECH STACK</span>
+                <h2>Technologies I <span>work with.</span></h2>
+                <p>Tools and technologies I use to bring ideas to life.</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <span class="skill-icon">⌘</span>
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Next.js</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">⌨</span>
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span>PHP</span>
+                        <span>Laravel</span>
+                        <span>Node.js</span>
+                        <span>REST APIs</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">◈</span>
+                    <h3>Database</h3>
+                    <div class="skill-tags">
+                        <span>MySQL</span>
+                        <span>Database Design</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <span class="skill-icon">⚙</span>
+                    <h3>Tools & Workflow</h3>
+                    <div class="skill-tags">
+                        <span>Git</span>
+                        <span>GitHub</span>
+                        <span>VS Code</span>
+                        <span>Postman</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section container" id="projects">
+        <div class="section-heading">
+            <span class="section-label">03 / SELECTED WORK</span>
+            <h2>Some things I've <span>built.</span></h2>
+            <p>A selection of projects showcasing my development skills.</p>
+        </div>
+
+        <div class="projects-grid">
+
+            <article class="project-card">
+                <div class="project-image project-one">
+                    <span>01</span>
+                    <div class="project-preview">Web Application</div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">FULL STACK DEVELOPMENT</span>
+                    <h3>Management System</h3>
+                    <p>
+                        A web-based management platform designed to
+                        organize operations, manage data, and improve
+                        workflow efficiency.
+                    </p>
+                    <div class="project-tech">
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <a href="#" class="project-link">View Project ↗</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image project-two">
+                    <span>02</span>
+                    <div class="project-preview">Modern Interface</div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">FRONTEND DEVELOPMENT</span>
+                    <h3>Modern Web Platform</h3>
+                    <p>
+                        A responsive web application focused on
+                        performance, user experience, and modern
+                        interface design.
+                    </p>
+                    <div class="project-tech">
+                        <span>Next.js</span>
+                        <span>React</span>
+                        <span>CSS</span>
+                    </div>
+                    <a href="#" class="project-link">View Project ↗</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image project-three">
+                    <span>03</span>
+                    <div class="project-preview">Backend & API</div>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-category">BACKEND DEVELOPMENT</span>
+                    <h3>REST API Application</h3>
+                    <p>
+                        Backend services with structured APIs,
+                        database integration, and organized
+                        application architecture.
+                    </p>
+                    <div class="project-tech">
+                        <span>Node.js</span>
+                        <span>MySQL</span>
+                        <span>REST API</span>
+                    </div>
+                    <a href="#" class="project-link">View Project ↗</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section experience-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">04 / JOURNEY</span>
+                <h2>My professional <span>journey.</span></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div>
+                        <span class="timeline-date">Present</span>
+                        <h3>Full Stack Software Engineer</h3>
+                        <p class="timeline-company">Professional Development</p>
+                        <p>
+                            Developing web applications, improving
+                            technical skills, and exploring modern
+                            software development practices.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Add your actual previous experience here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section container" id="contact">
+        <div class="contact-box">
+            <span class="section-label">05 / GET IN TOUCH</span>
+
+            <h2>Have a project in mind?<br>
+                <span>Let's build something.</span>
+            </h2>
+
+            <p>
+                I'm always interested in discussing new opportunities,
+                exciting projects, and meaningful collaborations.
+            </p>
+
+            <a href="mailto:your-email@example.com" class="btn btn-primary">
+                Say Hello ↗
+            </a>
+
+            <div class="contact-socials">
+                <a href="https://github.com/">GitHub</a>
+                <a href="https://linkedin.com/">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="#" class="logo">HM<span>.</span></a>
+            <p>Designed & Built by Hozayfa Mustafa © 2026</p>
+            <a href="#home">Back to top ↑</a>
+        </div>
+    </footer>
+
+</body>
+</html>
